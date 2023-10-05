@@ -68,6 +68,10 @@ app.use((err, req, res, next) => {
   });
 });
 
+app.get("/*", function (req, res) {
+  res.sendFile(path.resolve(__dirname, '../e-lib/build', 'index.html'));
+})
+
 // To listen for a port/ request number
 app.listen(process.env.PORT, () => {
   // To show that the backend is connected to the DB
